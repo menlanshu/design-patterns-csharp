@@ -2,7 +2,7 @@ using System;
 
 namespace Factory.Services.Accelerators
 {
-    public class OrderAccelerationService
+    public class OrderAccelerationService : IOrderAccelerationService
     {
         public void AccelerateOrder()
         {

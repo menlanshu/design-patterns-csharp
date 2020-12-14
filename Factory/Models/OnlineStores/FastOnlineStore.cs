@@ -10,12 +10,12 @@ namespace Factory.Models.OnlineStores
     {
         private readonly IPaymentService _paymentService;
         private readonly IShippingService _shippingService;
-        private readonly OrderAccelerationService _accelerationService;
+        private readonly IOrderAccelerationService _accelerationService;
 
         public string Name { get; }
 
         public FastOnlineStore(string name, IPaymentService paymentService, IShippingService shippingService,
-            OrderAccelerationService accelerationService)
+            IOrderAccelerationService accelerationService)
         {
             Name = name;
             _paymentService = paymentService;

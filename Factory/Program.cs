@@ -12,10 +12,25 @@ namespace Factory
     {
         static void Main(string[] args)
         {
+            // if write by yourself?
+            // Design:
+            // Service:
+            // PaymentService - IPaymentService, BasicPaymentService
+            // ShippingService - IShippingService, FedexShippingService, UPSShippingService
+            // AccerlerationService - IAccelerationService, OrderAccelerationService
+
+            // Model:
+            // OnlineStore - IOnlineStore, OnlineStore, FastOnlineStore
+            // Factory - IOnlineStoreFactory
+            
+            // Scripts:
+            // OnlineStoreCreateScripts
+            // OnlineStoreUpdateScripts
+
             // Setup dependencies.
             IPaymentService paymentService = new BasicPaymentService();
             IShippingService shippingService = new FedexShippingService();
-            OrderAccelerationService accelerationService = new OrderAccelerationService();
+            IOrderAccelerationService accelerationService = new OrderAccelerationService();
             IOnlineStoreFactory onlineStoreFactory = new BasicOnlineStoreFactory(paymentService, shippingService);
 
             // Setup scripts.
